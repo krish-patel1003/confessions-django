@@ -1,0 +1,21 @@
+{% extends "confessions/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="card" style="width: 50%">
+        <form action="" method="POST" class="form-control">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <p> Write your confession here, @{{ user.username }}</p>
+                {{ form|crispy }}
+            </fieldset>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

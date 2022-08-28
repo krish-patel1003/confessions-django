@@ -1,0 +1,23 @@
+{% extends "confessions/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">@{{ object.author.username }}</div>
+        <div class="card-body">
+            <p class="card-text"> {{ object.confession }}</p>
+        </div>
+
+        {% if object.author == user%}
+        <a href="{% url 'confession-update' object.id %}" class="btn btn-secondary"> Update </a>
+        <a href="{% url 'confession-delete' object.id %}" class="btn btn-danger"> Delete </a>
+        {% endif %}
+  </div>
+  <br>
+  <div class="container">
+    <h3> feature of likes and adding comments will be added soon </h3>
+  </div>
+</div>
+
+{% endblock content %}

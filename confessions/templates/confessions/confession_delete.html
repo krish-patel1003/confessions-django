@@ -1,0 +1,21 @@
+{% extends "confessions/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="card" style="width: 50%">
+        <form action="" method="POST" class="form-control">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <p> Are you sure you want to Delete the confession?</p>
+            </fieldset>
+            <br>
+            <div class="form-group">
+                <a href="{% url 'confession-detail' object.id%}" class="btn btn-secondary">Cancel</a>
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

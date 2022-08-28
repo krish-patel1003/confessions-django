@@ -1,0 +1,1 @@
+web: gunicorn confDJ_project.wsgi --log-file-
